@@ -3,10 +3,11 @@ A collection of python routines for downloading Sentinel products from SciHub.
 
 Requires sentinelsat package to run: https://pypi.org/project/sentinelsat/
 
+Username and password for accsess to SciHUB are provided through the `apihub.txt` file in the `userfiles` directory. 
 
 ## AUTO-DOWNLOAD OF SENTINEL PRODUCTS
-auto_dwn_slc.py 
-start_py.bat
+    - auto_dwn_slc.py
+    - start_py.bat
 
 The script was set up to run on STROJ for auto-download of Sentinel-1 SLC products. It is automatically run every Friday through the attached batch script. It queries for any new files and proceeds with download.
 
@@ -23,9 +24,9 @@ https://scihub.copernicus.eu/userguide/LongTermArchive
 
 The retrieval from LTA works in three steps:
 
-  1\ Compile a list of products and save it to a CSV file --> query_list_LTA.py
+  1\ Compile a list of products and save it to a CSV file --> `query_list_LTA.py`
 
-  2\ Trigger retrieval of products from LTA --> trigger_LTA.py
+  2\ Trigger retrieval of products from LTA --> `trigger_LTA.py`
   
     - quota for triggering of retrieval is 1 product per 30 min per user
     
@@ -35,7 +36,7 @@ The retrieval from LTA works in three steps:
     
     - a retrieved product stays online for at least 3 days
  
-  3\ Download retrieved products --> download_LTA.py
+  3\ Download retrieved products --> `download_LTA.py`
   
-    - periodically (very 5 min) checks if the file is already online, and proceeds with download when True
+    - periodically (every 5 min) checks if the file is already online, and proceeds with download when True
 
